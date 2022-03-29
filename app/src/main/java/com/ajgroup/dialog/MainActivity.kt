@@ -45,13 +45,16 @@ class MainActivity : AppCompatActivity() {
                 .inflate(LayoutInflater.from(this))
             val builder = AlertDialog.Builder(this)
             builder.setView(binding.getRoot())
-
             val dialog = builder.create()
             binding.btnDialogClose.setOnClickListener {
             Toast.makeText(this, "Custom Dialog Closed", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
             }
             dialog.show()
+        }
+        binding.btnFragment.setOnClickListener {
+            val dialogFragment = ExampleDialogFragment(binding.etName.text.toString())
+            dialogFragment.show(supportFragmentManager,null)
         }
     }
 }
