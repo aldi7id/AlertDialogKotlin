@@ -2,6 +2,7 @@ package com.ajgroup.dialog
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.ajgroup.dialog.databinding.ActivityMainBinding
@@ -41,6 +42,15 @@ class MainActivity : AppCompatActivity() {
             }
         dialogWithButton.show()
 
+        }
+        binding.btnDialogCustom.setOnClickListener {
+            val view = LayoutInflater.from(this).inflate(R.layout.custom_dialog, null, false)
+            val dialogBuilder = AlertDialog.Builder(this)
+            dialogBuilder.setView(view)
+            val dialog = dialogBuilder.create()
+            Toast.makeText(this, "Custom Dialog Closed", Toast.LENGTH_SHORT).show()
+            dialog.dismiss()
+            dialog.show()
         }
     }
 }

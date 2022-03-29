@@ -2,4 +2,6 @@
     <string name="app_name">Dialog</string>
     <string name="button_dialog_standard">Button Dialog Standard</string>
     <string name="dialog_with_button">Dialog With Button</string>
+    <string name="button_dialog_with_custom_layout">Button Dialog With Custom Layout</string>
+    <string name="ini_custom_layout_dialog">Ini Custom Layout Dialog</string>
 </resources>
