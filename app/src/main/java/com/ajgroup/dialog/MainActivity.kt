@@ -1,11 +1,13 @@
 package com.ajgroup.dialog
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.ajgroup.dialog.databinding.ActivityMainBinding
+import com.ajgroup.dialog.databinding.CustomDialogBinding
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -44,12 +46,16 @@ class MainActivity : AppCompatActivity() {
 
         }
         binding.btnDialogCustom.setOnClickListener {
-            val view = LayoutInflater.from(this).inflate(R.layout.custom_dialog, null, false)
-            val dialogBuilder = AlertDialog.Builder(this)
-            dialogBuilder.setView(view)
-            val dialog = dialogBuilder.create()
+            val binding: CustomDialogBinding = CustomDialogBinding
+                .inflate(LayoutInflater.from(this))
+            val builder = AlertDialog.Builder(this)
+            builder.setView(binding.getRoot())
+
+            val dialog = builder.create()
+            binding.btnDialogClose.setOnClickListener {
             Toast.makeText(this, "Custom Dialog Closed", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
+            }
             dialog.show()
         }
     }
