@@ -13,5 +13,9 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:text="@string/button_dialog_standard"/>
-
+   <Button
+       android:id="@+id/btn_dialog_button"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+      android:text="@string/dialog_with_button"/>
 </LinearLayout>

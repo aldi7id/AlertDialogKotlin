@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Dialog</string>
     <string name="button_dialog_standard">Button Dialog Standard</string>
+    <string name="dialog_with_button">Dialog With Button</string>
 </resources>
