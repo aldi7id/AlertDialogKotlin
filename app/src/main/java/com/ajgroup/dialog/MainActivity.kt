@@ -1,5 +1,6 @@
 package com.ajgroup.dialog
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Toast
@@ -30,19 +31,13 @@ class MainActivity : AppCompatActivity() {
             dialogWithButton.setIcon(R.mipmap.ic_launcher_round)
             
             dialogWithButton.setCancelable(false)
-            dialogWithButton.setPositiveButton("Positive Button"){
-                dialogInterface, p1 ->
-                Toast.makeText(this, "Positif Button Clicked", Toast.LENGTH_SHORT).show()
-            }
-            dialogWithButton.setNegativeButton("Negative Button"){
-                dialogInterface, p1->
-                Toast.makeText(this, "Negative Button Clicked", Toast.LENGTH_SHORT).show()
-            }
-            dialogWithButton.setNeutralButton("Neutral Button"){
-                dialogInterface, p1 ->
-                Toast.makeText(this, "Neutral Button Clicked", Toast.LENGTH_SHORT).show()
-            }
-        dialogWithButton.show()
+            dialogWithButton.setPositiveButton("+",
+                DialogInterface.OnClickListener { dialogInterface, i -> Toast.makeText(this, "Positif Button Clicked", Toast.LENGTH_SHORT).show() })
+            dialogWithButton.setNegativeButton("-",
+                DialogInterface.OnClickListener { dialogInterface, i -> Toast.makeText(this, "Negative Button Clicked", Toast.LENGTH_SHORT).show() })
+            dialogWithButton.setNeutralButton("0",
+                DialogInterface.OnClickListener { dialogInterface, i -> Toast.makeText(this, "Neutral Button Clicked", Toast.LENGTH_SHORT).show() })
+            dialogWithButton.show()
 
         }
         binding.btnDialogCustom.setOnClickListener {
